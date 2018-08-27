@@ -20,13 +20,18 @@ io.on('connection', (socket) => {
 
     socket.on('createMessage', (message) => {
         console.log('createMessage', message, typeof message); 
+        io.emit('newMessage', {
+            from: message.from,
+            text: message.text,
+            createdAt: new Date().getTime()
+        })
     })
 
-    socket.emit('newMessage', {
-        from: 'nathalie.nhu.y@gmail.com',
-        text: "Hey I miss you",
-        createAt: 123
-    });
+    // socket.emit('newMessage', {
+    //     from: 'nathalie.nhu.y@gmail.com',
+    //     text: "Hey I miss you",
+    //     createAt: 123
+    // });
 } );
 
 
