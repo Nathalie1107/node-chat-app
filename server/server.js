@@ -17,6 +17,16 @@ io.on('connection', (socket) => {
     socket.on('disconnect', (socket) => {
         console.log('Disconnect with client');
     })
+
+    socket.on('createMessage', (message) => {
+        console.log('createMessage', message, typeof message); 
+    })
+
+    socket.emit('newMessage', {
+        from: 'nathalie.nhu.y@gmail.com',
+        text: "Hey I miss you",
+        createAt: 123
+    });
 } );
 
 
