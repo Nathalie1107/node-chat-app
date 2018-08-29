@@ -1,8 +1,18 @@
 var generateMessage = (from, text) => {
     return {
-        from, text,
+        from, 
+        text,
         createdAt: new Date().getTime()
     }
 }
 
-module.exports = {generateMessage};
+var generateLocationMessage = (from, latitude, longtitude) => {
+    return {
+        from, 
+        url: `https://www.google.com/maps?q=${latitude},${longtitude}`,
+        createdAt: new Date().getTime()
+    }
+}
+
+
+module.exports = {generateMessage, generateLocationMessage};
