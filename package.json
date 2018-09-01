@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server/server.js",
     "test-watch": "nodemon --exec 'npm test'",
-    "test": "mocha server/**/*.test.js"
+    "test": "mocha server/**/*.test.js",
+    "testValidation":"mocha server/utils/validation.test.js"
   },
   "engines": {
     "node": "8.11.2"
