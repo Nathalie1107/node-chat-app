@@ -74,18 +74,11 @@ socket.on('newLocationMessage', (locationMessage) => {
 
 })
 
-// socket.emit('createMessage', {
-//     from: "Frank",
-//     text: 'Hi'
-// }, function () {
-//     console.log('Got it');
-// });
-
 jQuery('#message-form').on('submit', function (e) {
     e.preventDefault();
+
     var messageTbx = jQuery('[name=message]')
     socket.emit('createMessage', {
-        from: 'Anynomous',
         text:messageTbx.val()
     }, function(){
         messageTbx.val('');
